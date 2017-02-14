@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.rudra.modelClass33.Employee" table="employee_info_1">
+		<id name="id"></id>
+		<property name="name" />
+		<property name="email" />
+		<property name="salary" />
+		<joined-subclass name="org.rudra.modelClass33.SoftwareEngineer" table="software_employee">
+			<key column="id"></key>
+			<property name="tools"></property>
+		</joined-subclass>
+		<joined-subclass name="org.rudra.modelClass33.HardwareEngineer" table="hardware_employee">
+			<key column="id"></key>
+			<property name="workingHours"></property>
+		</joined-subclass>
+		<joined-subclass name="org.rudra.modelClass33.Admin" table="admin_employee">
+			<key column="id"></key>
+			<property name="branch"></property>
+		</joined-subclass>
+	
+	
+	</class>
+</hibernate-mapping>

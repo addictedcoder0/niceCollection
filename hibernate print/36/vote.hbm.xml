@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.rudra.modelClass36.Vote" table="Vote_O_T_O">
+		<id name="vote_id">
+			<generator class="foreign">
+				<param name="property">voter</param>
+			</generator>
+		</id>
+		<property name="party_name"></property>
+		<property name="voting_date"></property>
+		<one-to-one name="voter" class="org.rudra.modelClass36.Voter">
+		
+		</one-to-one>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+			<!-- UrlFilenameViewController is an inbuilt controller , which acts as a RequestDispatcher ... it redirects 
+				to the <bean_name>.jsp file -->
+	
+	<bean name="/hi.ru" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"></bean>	
+	<bean name="/hello.ru" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"></bean>	
+	<!-- <bean class="com.rudra.controller.HelloController">
+		<property name="viewName" value="success"></property>
+	</bean>
+ -->	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+</beans>

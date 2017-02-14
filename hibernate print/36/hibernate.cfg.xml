@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/hibernatedb</property>
+        <property name="connection.username">app_rw</property>
+        <property name="connection.password">MYPASSWORD</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect (responsible for generating the SQL Queries )-->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+		<!-- Second-level cache -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		
+		
+		
+		<!-- Drop and re-create the database schema on startup -->
+       	<property name="hbm2ddl.auto">create</property>
+    
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+	
+		<!-- name the every annotated entity class -->
+		
+		<mapping resource="org/rudra/resources36/voter.hbm.xml" />
+		<mapping resource="org/rudra/resources36/vote.hbm.xml" />
+				
+	</session-factory>
+</hibernate-configuration>

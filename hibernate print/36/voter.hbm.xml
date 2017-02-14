@@ -1,0 +1,12 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.rudra.modelClass36.Voter" table="Voter_O_T_O">
+		<id name="voter_id"></id>
+		<property name="voter_name" />
+		<property name="voter_age" />
+		
+	</class>
+</hibernate-mapping>

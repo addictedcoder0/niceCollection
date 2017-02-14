@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.rudra.modelClass37.Faculty" table="Faculty_M_T_M">
+		<id name="id"/>
+		<property name="name"></property>
+		<property name="experience"></property>
+		<set name="courses" table="faculty_course">
+		<key column="id"/>
+		<many-to-many class="org.rudra.modelClass37.Course" column="course_id" >
+		</many-to-many>
+		</set>
+		
+	</class>
+</hibernate-mapping>

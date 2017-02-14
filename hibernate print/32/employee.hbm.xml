@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.rudra.modelClass32.Employee" table="employee_info">
+		<id name="id"></id>
+		<discriminator column="etype" />
+		<property name="name" />
+		<property name="email" />
+		<property name="salary" />
+		<subclass name="org.rudra.modelClass32.SoftwareEngineer" discriminator-value="se">
+			<property name="tools"></property>
+		</subclass>
+		<subclass name="org.rudra.modelClass32.HardwareEngineer" discriminator-value="he">
+			<property name="workingHours"></property>
+		</subclass>
+		<subclass name="org.rudra.modelClass32.Admin" discriminator-value="admin">
+			<property name="branch"></property>
+		</subclass>
+	
+	
+	</class>
+</hibernate-mapping>
